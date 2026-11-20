@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- htmlaunch:enhanced:v2 -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22hsl(316%2C72%25%2C58%25)%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22hsl(346%2C72%25%2C44%25)%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2246%22%20text-anchor%3D%22middle%22%20font-family%3D%22ui-sans-serif%2Csystem-ui%2C-apple-system%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2238%22%20font-weight%3D%22800%22%20fill%3D%22%23ffffff%22%3EM%3C%2Ftext%3E%3C%2Fsvg%3E">
+<meta name="theme-color" content="#7b141d">
+<meta name="description" content="Module 5: Thermal Energy — Interactive Assessment | deployed with HTMLaunch">
+<link rel="canonical" href="https://Macthesmalwa.github.io/module-5-thermal-energy-interactive-asse/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Module 5: Thermal Energy — Interactive Assessment">
+<meta property="og:title" content="Module 5: Thermal Energy — Interactive Assessment">
+<meta property="og:description" content="Module 5: Thermal Energy — Interactive Assessment | deployed with HTMLaunch">
+<meta property="og:url" content="https://Macthesmalwa.github.io/module-5-thermal-energy-interactive-asse/">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s.wordpress.com/mshots/v1/https%3A%2F%2FMacthesmalwa.github.io%2Fmodule-5-thermal-energy-interactive-asse%2F?w=1200&h=630">
+<meta property="og:image:alt" content="Module 5: Thermal Energy — Interactive Assessment">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Module 5: Thermal Energy — Interactive Assessment">
+<meta name="twitter:description" content="Module 5: Thermal Energy — Interactive Assessment | deployed with HTMLaunch">
+<meta name="twitter:image" content="https://s.wordpress.com/mshots/v1/https%3A%2F%2FMacthesmalwa.github.io%2Fmodule-5-thermal-energy-interactive-asse%2F?w=1200&h=630">
+<meta name="twitter:image:alt" content="Module 5: Thermal Energy — Interactive Assessment">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 5: Thermal Energy — Interactive Assessment</title>
+  <style>
+    :root {
+      --bg-primary: #0d1117;
+      --bg-secondary: #161b22;
+      --bg-card: #1c222b;
+      --bg-input: #0f131a;
+      --border: #30363d;
+      --accent: #38bdf8;
+      --accent-hover: #0284c7;
+      --text-main: #f0f6fc;
+      --text-muted: #8b949e;
+      --success: #2ea043;
+      --success-bg: rgba(46, 160, 67, 0.15);
+      --warning: #d29922;
+      --warning-bg: rgba(210, 153, 34, 0.15);
+      --danger: #f85149;
+      --danger-bg: rgba(248, 81, 73, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 5rem;
+    }
+
+    /* Sticky Top Header & Progress Bar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(22, 27, 34, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+    }
+
+    .header-content {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .header-title h1 {
+      font-size: 1.35rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .header-title p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .progress-box {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .progress-bar-container {
+      width: 140px;
+      height: 10px;
+      background-color: var(--bg-input);
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent), #818cf8);
+      transition: width 0.3s ease;
+    }
+
+    /* Main Container */
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1.25rem;
+    }
+
+    .section-header {
+      margin: 2.5rem 0 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .section-header h2 {
+      font-size: 1.25rem;
+      color: #e2e8f0;
+    }
+
+    .section-badge {
+      font-size: 0.8rem;
+      background-color: var(--bg-secondary);
+      color: var(--accent);
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    /* Question Cards */
+    .question-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.35rem;
+      margin-bottom: 1.25rem;
+      transition: border-color 0.25s ease;
+    }
+
+    .question-card.unanswered-highlight {
+      border-color: var(--danger);
+      box-shadow: 0 0 0 1px var(--danger);
+    }
+
+    .q-title {
+      font-weight: 600;
+      font-size: 1.03rem;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .q-marks {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    /* MCQ Options */
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .option-label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.7rem 0.9rem;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .option-label:hover {
+      border-color: var(--accent);
+      background-color: #212833;
+    }
+
+    .option-label input[type="radio"] {
+      accent-color: var(--accent);
+      width: 17px;
+      height: 17px;
+      cursor: pointer;
+    }
+
+    /* Textareas for SAQ & LAQ */
+    textarea {
+      width: 100%;
+      background-color: var(--bg-input);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem;
+      font-size: 0.95rem;
+      resize: vertical;
+      transition: border-color 0.2s;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    textarea.saq-input {
+      min-height: 85px;
+    }
+
+    textarea.laq-input {
+      min-height: 145px;
+    }
+
+    /* Reference Table Helper inside Quiz */
+    .ref-table {
+      width: 100%;
+      max-width: 450px;
+      border-collapse: collapse;
+      margin: 0.8rem 0 1rem;
+      font-size: 0.88rem;
+      background-color: var(--bg-secondary);
+    }
+
+    .ref-table th, .ref-table td {
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+    }
+
+    .ref-table th {
+      color: var(--accent);
+      background-color: #131820;
+    }
+
+    /* Feedback Box */
+    .feedback {
+      margin-top: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      display: none;
+      border-left: 4px solid;
+    }
+
+    .feedback.correct {
+      display: block;
+      background-color: var(--success-bg);
+      border-color: var(--success);
+      color: #aff5b4;
+    }
+
+    .feedback.partial {
+      display: block;
+      background-color: var(--warning-bg);
+      border-color: var(--warning);
+      color: #f8e3a1;
+    }
+
+    .feedback.incorrect {
+      display: block;
+      background-color: var(--danger-bg);
+      border-color: var(--danger);
+      color: #ffdcd7;
+    }
+
+    /* Submit Controls */
+    .submit-section {
+      margin-top: 2.5rem;
+      text-align: center;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      border-radius: 12px;
+    }
+
+    #validation-msg {
+      color: var(--danger);
+      font-size: 0.92rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      min-height: 1.4rem;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 0.8rem 1.8rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #submit-btn {
+      background-color: var(--accent);
+      color: #090d16;
+    }
+
+    #submit-btn:hover:not(:disabled) {
+      background-color: var(--accent-hover);
+      color: #fff;
+    }
+
+    #submit-btn:disabled {
+      background-color: #2b333e;
+      color: #6e7681;
+      cursor: not-allowed;
+    }
+
+    #reset-btn {
+      background-color: transparent;
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      display: none;
+    }
+
+    #reset-btn:hover {
+      background-color: var(--bg-secondary);
+    }
+
+    /* Scoreboard Summary */
+    #scoreboard {
+      display: none;
+      background: linear-gradient(145deg, #161b22, #1f2733);
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    #scoreboard h2 {
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .score-big {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin: 0.5rem 0;
+    }
+
+    .score-breakdown {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .score-breakdown span strong {
+      color: var(--text-main);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <div class="header-title">
+        <h1>Module 5: Temperature, Thermal Energy, and Heat</h1>
+        <p>20 MCQs (20 Marks) • 5 SAQs (15 Marks) • 2 LAQs (10 Marks) | Total: 45 Marks</p>
+      </div>
+      <div class="progress-box">
+        <span id="progress-text">0 / 27 Attempted</span>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Final Scoreboard (Revealed on Submit) -->
+    <div id="scoreboard">
+      <h2>Assessment Results & Feedback</h2>
+      <div class="score-big" id="total-score-display">0 / 45</div>
+      <p id="grade-remark"></p>
+      <div class="score-breakdown">
+        <span>MCQs: <strong id="mcq-score-display">0 / 20</strong></span>
+        <span>SAQs: <strong id="saq-score-display">0 / 15</strong></span>
+        <span>LAQs: <strong id="laq-score-display">0 / 10</strong></span>
+      </div>
+    </div>
+
+    <form id="quiz-form" novalidate>
+      <!-- SECTION A: MCQs -->
+      <div class="section-header">
+        <h2>Section A: Multiple Choice Questions</h2>
+        <span class="section-badge">20 Questions × 1 Mark = 20 Marks</span>
+      </div>
+      <div id="mcq-container"></div>
+
+      <!-- SECTION B: SAQs -->
+      <div class="section-header">
+        <h2>Section B: Short Answer Questions</h2>
+        <span class="section-badge">5 Questions × 3 Marks = 15 Marks</span>
+      </div>
+      <div id="saq-container"></div>
+
+      <!-- SECTION C: LAQs -->
+      <div class="section-header">
+        <h2>Section C: Long Answer Questions</h2>
+        <span class="section-badge">2 Questions × 5 Marks = 10 Marks</span>
+      </div>
+      <div id="laq-container"></div>
+
+      <!-- Submit Controls -->
+      <div class="submit-section">
+        <div id="validation-msg">Complete all 27 questions to unlock submission.</div>
+        <div class="btn-group">
+          <button type="submit" id="submit-btn" disabled>Submit Quiz</button>
+          <button type="button" id="reset-btn">Retake Quiz</button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    // ==========================================
+    // 1. QUESTION BANK (Grounded in Module 5)
+    // ==========================================
+    const mcqData = [
+      {
+        q: "What is temperature a measure of?",
+        options: [
+          "The total potential energy of all particles in an object",
+          "The average value of the kinetic energy of the particles in an object",
+          "The total amount of heat flowing out of a substance",
+          "The chemical bond strength between molecules"
+        ],
+        answer: 1,
+        explanation: "Temperature is defined as a measure of the average value of the kinetic energy of the particles in an object."
+      },
+      {
+        q: "How do the particles in hot tea compare to the particles in iced tea?",
+        options: [
+          "Particles in hot tea are larger in size",
+          "Particles in hot tea move more slowly",
+          "Particles in hot tea move faster on average",
+          "Particles in iced tea have greater kinetic energy"
+        ],
+        answer: 2,
+        explanation: "As temperature increases, the average speed of particles increases. Particles in hot tea move faster than those in iced tea."
+      },
+      {
+        q: "What is the SI unit used to measure temperature?",
+        options: ["Celsius (°C)", "Fahrenheit (°F)", "Joule (J)", "Kelvin (K)"],
+        answer: 3,
+        explanation: "In SI units, temperature is measured in kelvins (K), even though the Celsius scale is used more commonly."
+      },
+      {
+        q: "How does the size of one kelvin compare to one Celsius degree?",
+        options: [
+          "One kelvin is twice as large as one Celsius degree",
+          "One kelvin is the exact same size as one Celsius degree",
+          "One kelvin is half the size of one Celsius degree",
+          "One kelvin is 273 times larger than one Celsius degree"
+        ],
+        answer: 1,
+        explanation: "One kelvin is the exact same size as one Celsius degree."
+      },
+      {
+        q: "Thermal energy is defined as:",
+        options: [
+          "Only the average kinetic energy of particles",
+          "The sum of the kinetic and potential energy of all the particles in an object",
+          "The heat required to melt 1 kg of a solid",
+          "The energy lost when particles stop moving completely"
+        ],
+        answer: 1,
+        explanation: "Thermal energy is the sum of both the kinetic energy and potential energy of all the particles in an object."
+      },
+      {
+        q: "What happens to the potential energy of particles in a substance as they move farther apart?",
+        options: [
+          "Their potential energy decreases",
+          "Their potential energy remains unchanged",
+          "Their potential energy increases",
+          "Their potential energy converts completely into mass"
+        ],
+        answer: 2,
+        explanation: "Because particles exert attractive forces on each other, separating them (moving them farther apart) increases their potential energy."
+      },
+      {
+        q: "You have a glass of water and a beaker containing twice as much water at the exact same temperature. How does the thermal energy of the water in the beaker compare to the glass?",
+        options: [
+          "It has half as much thermal energy",
+          "It has the exact same thermal energy",
+          "It has twice as much thermal energy",
+          "It has four times as much thermal energy"
+        ],
+        answer: 2,
+        explanation: "At the same temperature, the average kinetic energy is identical, but twice the mass means twice as many molecules—resulting in twice the total thermal energy."
+      },
+      {
+        q: "Which statement accurately describes how heat flows?",
+        options: [
+          "From cooler materials to warmer materials",
+          "From warmer materials to cooler materials until both reach the same temperature",
+          "Only between solids of identical mass",
+          "From objects with lower kinetic energy to higher kinetic energy"
+        ],
+        answer: 1,
+        explanation: "Heat is thermal energy that flows from something at a higher temperature to something at a lower temperature until thermal equilibrium is reached."
+      },
+      {
+        q: "When you place an ice cube into a glass of warm water, what actually happens thermally?",
+        options: [
+          "Coldness flows from the ice into the water",
+          "Thermal energy flows from the warm water to the ice",
+          "The ice transfers kinetic energy to the water",
+          "No thermal energy is transferred until all the ice melts"
+        ],
+        answer: 1,
+        explanation: "The warmer water transfers its thermal energy to the cooler ice, which both cools the water and warms/melts the ice."
+      },
+      {
+        q: "What is the standard unit used to measure heat?",
+        options: ["Kelvin (K)", "Joule (J)", "Kilogram (kg)", "Degrees Celsius (°C)"],
+        answer: 1,
+        explanation: "Because heat is a form of energy, it is measured in joules (J)."
+      },
+      {
+        q: "At the beach on a sunny summer day, why does ocean water feel much cooler than the sand?",
+        options: [
+          "The Sun sends less energy to the ocean than to the sand",
+          "Water has a much higher specific heat than sand",
+          "Sand reflects all thermal energy back into the air",
+          "Water molecules cannot absorb solar radiation"
+        ],
+        answer: 1,
+        explanation: "It takes about six times as much heat to raise the temperature of 1 kg of water by 1°C compared to 1 kg of sand."
+      },
+      {
+        q: "What is the definition of specific heat?",
+        options: [
+          "The total thermal energy stored in an object at 100°C",
+          "The amount of heat needed to raise the temperature of 1 kg of a substance by 1°C",
+          "The temperature at which a substance changes from solid to liquid",
+          "The speed at which electrons move through a metal conductor"
+        ],
+        answer: 1,
+        explanation: "Specific heat is the amount of heat needed to raise the temperature of 1 kg of a substance by 1°C, measured in J/(kg · °C)."
+      },
+      {
+        q: "Why does water have a much higher specific heat than metals like iron?",
+        options: [
+          "Water molecules have strong bonds that must be broken before molecules can move faster",
+          "Water has freely moving electrons that absorb heat without moving",
+          "Water is denser than solid iron",
+          "Iron molecules have stronger intermolecular bonds than water"
+        ],
+        answer: 0,
+        explanation: "Water molecules form strong bonds; some added heat must break these bonds before the molecules can increase their kinetic energy (speed)."
+      },
+      {
+        q: "Why is water widely used as a coolant in automobile engines?",
+        options: [
+          "It freezes at high temperatures",
+          "It can absorb a large amount of heat without a large increase in temperature",
+          "It transfers heat from the water into the hotter engine",
+          "It has the lowest specific heat of all common liquids"
+        ],
+        answer: 1,
+        explanation: "Because of its high specific heat (4184 J/(kg · °C)), water absorbs substantial heat from the engine while experiencing a relatively small temperature rise."
+      },
+      {
+        q: "In the thermal energy equation Q = m(Tf − Ti)C, what does the variable C represent?",
+        options: [
+          "Change in temperature",
+          "Celsius scale conversion",
+          "Specific heat of the object",
+          "Calorimeter constant"
+        ],
+        answer: 2,
+        explanation: "In Q = m(Tf − Ti)C, Q is change in thermal energy, m is mass, (Tf − Ti) is temperature change, and C is specific heat."
+      },
+      {
+        q: "Using the reference specific heat of iron (450 J/(kg · °C)), how much heat is needed to raise the temperature of 1 kg of iron from 25°C to 30°C?",
+        options: ["450 J", "2,250 J", "11,250 J", "13,500 J"],
+        answer: 1,
+        explanation: "Q = m(Tf − Ti)C = (1 kg)(30°C − 25°C)(450 J/(kg · °C)) = 1 × 5 × 450 = 2,250 J."
+      },
+      {
+        q: "A 20 kg wooden chair (specific heat = 1700 J/(kg · °C)) warms in sunlight from 15°C to 25°C. What is its change in thermal energy?",
+        options: ["34,000 J", "170,000 J", "340,000 J", "510,000 J"],
+        answer: 2,
+        explanation: "Q = (20 kg)(25°C − 15°C)(1700 J/(kg · °C)) = 20 × 10 × 1700 = 340,000 J."
+      },
+      {
+        q: "What is the purpose of a calorimeter?",
+        options: [
+          "To measure the wind speed over warm water",
+          "To determine the specific heat of a material by measuring heat transfer to water",
+          "To convert thermal energy directly into electrical energy",
+          "To cool engine parts below freezing point"
+        ],
+        answer: 1,
+        explanation: "A calorimeter is a device used to find the specific heat of a material by transferring heat from a heated object to a known mass of water."
+      },
+      {
+        q: "Inside a calorimeter, how does the thermal energy released by the heated object compare to the thermal energy absorbed by the water?",
+        options: [
+          "The energy released by the object is greater than the energy absorbed by the water",
+          "The energy released by the object equals the thermal energy absorbed by the water",
+          "The water absorbs twice as much thermal energy as the object releases",
+          "Energy transfer stops while the object is still warmer than the water"
+        ],
+        answer: 1,
+        explanation: "By conservation of energy in a calorimeter, the thermal energy released by the object equals the thermal energy absorbed by the water until both reach the same temperature."
+      },
+      {
+        q: "When you leave cold butter out on a kitchen counter at room temperature, why does it get warmer and softer?",
+        options: [
+          "Butter particles transfer potential energy to the room air",
+          "Air particles have more kinetic energy and collide with butter particles, transferring kinetic energy to them",
+          "Cold energy radiates out of the butter into the table",
+          "The mass of the butter increases as it warms"
+        ],
+        answer: 1,
+        explanation: "Room-temperature air particles have higher kinetic energy and bump into the butter particles, transferring kinetic energy so the butter particles move faster."
+      }
+    ];
+
+    const saqData = [
+      {
+        q: "Explain the difference between temperature and thermal energy.",
+        marks: 3,
+        keywords: [
+          ["average", "kinetic"],
+          ["sum", "total", "potential"],
+          ["mass", "amount", "number of particles", "all"]
+        ],
+        sampleAnswer: "Temperature is a measure of the average kinetic energy of the particles in an object, whereas thermal energy is the total sum of both the kinetic and potential energy of all particles in the object (so thermal energy also depends on the object's mass)."
+      },
+      {
+        q: "Define heat and explain what determines the direction in which heat flows between two objects.",
+        marks: 3,
+        keywords: [
+          ["thermal energy", "flows", "transfers"],
+          ["higher", "warmer", "hotter"],
+          ["lower", "cooler", "colder", "same temperature"]
+        ],
+        sampleAnswer: "Heat is thermal energy that flows from one material to another. Heat always flows from an object at a higher temperature (warmer) to an object at a lower temperature (cooler) until both reach the same temperature."
+      },
+      {
+        q: "The specific heat of copper is 385 J/(kg · °C). Calculate the change in thermal energy for a copper pipe with a mass of 8 kg when it is heated from 12°C to 21°C. Show your formula and work.",
+        marks: 3,
+        keywords: [
+          ["27720", "27,720"],
+          ["9", "21 - 12", "21-12"],
+          ["385", "8"]
+        ],
+        sampleAnswer: "Formula: Q = m(Tf − Ti)C. Given: m = 8 kg, Ti = 12°C, Tf = 21°C (ΔT = 9°C), C = 385 J/(kg · °C). Calculation: Q = (8 kg)(21°C − 12°C)(385 J/(kg · °C)) = 8 × 9 × 385 = 27,720 J."
+      },
+      {
+        q: "Why does a bare tile or wood floor feel much colder on your bare feet in the morning than a carpeted rug at the same room temperature?",
+        marks: 3,
+        keywords: [
+          ["specific heat", "heat"],
+          ["flows", "transfers", "feet", "foot"],
+          ["faster", "more", "absorbs", "warms"]
+        ],
+        sampleAnswer: "Even though both floors are at the same room temperature, the bare floor has a higher specific heat / conducts thermal energy away from your warm feet more rapidly than the rug, absorbing more heat from your feet without warming up quickly, which makes your feet feel cold."
+      },
+      {
+        q: "Describe how a calorimeter is used to determine the specific heat of an unknown metal object.",
+        marks: 3,
+        keywords: [
+          ["water", "known mass"],
+          ["temperature", "change"],
+          ["released", "absorbed", "equal"]
+        ],
+        sampleAnswer: "A heated object of known mass is placed into a known mass of water inside the calorimeter. Heat flows from the object to the water until both reach the same temperature. By measuring the water's temperature change, the thermal energy absorbed by the water is calculated, which equals the thermal energy released by the object—allowing its specific heat to be solved."
+      }
+    ];
+
+    const laqData = [
+      {
+        q: "Compare the molecular structure of water and metals to explain why water has a very high specific heat (4,184 J/(kg · °C)) while metals like iron have a low specific heat (450 J/(kg · °C)). Then explain why this property makes water ideal as an automobile engine coolant.",
+        marks: 5,
+        keywords: [
+          ["strong bonds", "hydrogen bonds", "bonds"],
+          ["break", "broken", "move faster"],
+          ["electrons", "freely", "free"],
+          ["coolant", "absorb", "engine"],
+          ["small", "less", "without a large"]
+        ],
+        sampleAnswer: "1) Molecular Structure: Water molecules form strong bonds with each other. When heat is added, a portion of that energy must first break these strong bonds before the molecules can move faster (increase temperature). In contrast, electrons in metals move freely with no strong intermolecular bonds to break, so added heat immediately increases particle kinetic energy.\n2) Engine Coolant: Because water has a very high specific heat, it can absorb a large amount of thermal energy from a hot automobile engine without experiencing a large increase in its own temperature, keeping the water cooler than the engine so heat continuously flows out of the engine."
+      },
+      {
+        q: "Analyze the two factors that determine an object's total thermal energy: (a) temperature and (b) mass. Use the examples of a glass of water versus a beaker with twice as much water at the same temperature, and explain how both kinetic and potential energy of particles contribute to thermal energy.",
+        marks: 5,
+        keywords: [
+          ["kinetic", "speed"],
+          ["potential", "apart", "separation", "distance"],
+          ["sum", "both"],
+          ["glass", "beaker", "twice"],
+          ["same temperature", "average"]
+        ],
+        sampleAnswer: "Thermal energy is the sum of the kinetic energy (from particle motion/speed) and potential energy (from particle separation against attractive forces) of all particles in an object.\n(a) Temperature: Increasing an object's temperature increases the average speed and average kinetic energy of its particles, thereby increasing total thermal energy.\n(b) Mass: If a beaker contains twice as much water as a glass at the exact same temperature, the average kinetic energy per molecule is identical in both. However, because the beaker has twice as many water molecules (twice the mass), its total kinetic energy and total thermal energy are twice as large as those of the water in the glass."
+      }
+    ];
+
+    // ==========================================
+    // 2. RENDER QUIZ DOM
+    // ==========================================
+    const mcqContainer = document.getElementById('mcq-container');
+    const saqContainer = document.getElementById('saq-container');
+    const laqContainer = document.getElementById('laq-container');
+
+    // Render MCQs
+    mcqData.forEach((item, index) => {
+      const card = document.createElement('div');
+      card.className = 'question-card';
+      card.id = `card-mcq-${index}`;
+
+      const optionsHTML = item.options.map((opt, optIdx) => `
+        <label class="option-label">
+          <input type="radio" name="mcq-${index}" value="${optIdx}" />
+          <span>${opt}</span>
+        </label>
+      `).join('');
+
+      card.innerHTML = `
+        <div class="q-title">
+          <span>${index + 1}. ${item.q}</span>
+          <span class="q-marks">[1 Mark]</span>
+        </div>
+        <div class="options-list">${optionsHTML}</div>
+        <div class="feedback" id="fb-mcq-${index}"></div>
+      `;
+      mcqContainer.appendChild(card);
+    });
+
+    // Render SAQs
+    saqData.forEach((item, index) => {
+      const card = document.createElement('div');
+      card.className = 'question-card';
+      card.id = `card-saq-${index}`;
+
+      card.innerHTML = `
+        <div class="q-title">
+          <span>${21 + index}. ${item.q}</span>
+          <span class="q-marks">[${item.marks} Marks]</span>
+        </div>
+        <textarea class="saq-input" id="saq-${index}" placeholder="Write your concise answer here..."></textarea>
+        <div class="feedback" id="fb-saq-${index}"></div>
+      `;
+      saqContainer.appendChild(card);
+    });
+
+    // Render LAQs
+    laqData.forEach((item, index) => {
+      const card = document.createElement('div');
+      card.className = 'question-card';
+      card.id = `card-laq-${index}`;
+
+      card.innerHTML = `
+        <div class="q-title">
+          <span>${26 + index}. ${item.q}</span>
+          <span class="q-marks">[${item.marks} Marks]</span>
+        </div>
+        <textarea class="laq-input" id="laq-${index}" placeholder="Provide a detailed, well-structured explanation..."></textarea>
+        <div class="feedback" id="fb-laq-${index}"></div>
+      `;
+      laqContainer.appendChild(card);
+    });
+
+    // ==========================================
+    // 3. LIVE COMPLETION TRACKING & VALIDATION
+    // ==========================================
+    const totalQuestions = mcqData.length + saqData.length + laqData.length; // 27
+    const progressText = document.getElementById('progress-text');
+    const progressFill = document.getElementById('progress-fill');
+    const submitBtn = document.getElementById('submit-btn');
+    const validationMsg = document.getElementById('validation-msg');
+    const quizForm = document.getElementById('quiz-form');
+    let isSubmitted = false;
+
+    function checkCompletion() {
+      if (isSubmitted) return;
+
+      let attempted = 0;
+
+      // Check MCQs
+      mcqData.forEach((_, idx) => {
+        const selected = document.querySelector(`input[name="mcq-${idx}"]:checked`);
+        const card = document.getElementById(`card-mcq-${idx}`);
+        if (selected) {
+          attempted++;
+          card.classList.remove('unanswered-highlight');
+        }
+      });
+
+      // Check SAQs
+      saqData.forEach((_, idx) => {
+        const val = document.getElementById(`saq-${idx}`).value.trim();
+        const card = document.getElementById(`card-saq-${idx}`);
+        if (val.length > 0) {
+          attempted++;
+          card.classList.remove('unanswered-highlight');
+        }
+      });
+
+      // Check LAQs
+      laqData.forEach((_, idx) => {
+        const val = document.getElementById(`laq-${idx}`).value.trim();
+        const card = document.getElementById(`card-laq-${idx}`);
+        if (val.length > 0) {
+          attempted++;
+          card.classList.remove('unanswered-highlight');
+        }
+      });
+
+      const pct = Math.round((attempted / totalQuestions) * 100);
+      progressText.textContent = `${attempted} / ${totalQuestions} Attempted`;
+      progressFill.style.width = `${pct}%`;
+
+      if (attempted === totalQuestions) {
+        submitBtn.disabled = false;
+        validationMsg.style.color = '#3fb950';
+        validationMsg.textContent = 'All 27 questions attempted! You can now submit your quiz.';
+      } else {
+        submitBtn.disabled = true;
+        validationMsg.style.color = '#f85149';
+        const remaining = totalQuestions - attempted;
+        validationMsg.textContent = `Please attempt all questions before submitting (${remaining} remaining).`;
+      }
+    }
+
+    quizForm.addEventListener('input', checkCompletion);
+    quizForm.addEventListener('change', checkCompletion);
+
+    // ==========================================
+    // 4. GRADING ENGINE & FEEDBACK GENERATOR
+    // ==========================================
+    function evaluateWrittenResponse(userText, keywordGroups, maxMarks) {
+      const normalized = userText.toLowerCase().replace(/,/g, '');
+      let matchedConcepts = 0;
+
+      keywordGroups.forEach(group => {
+        const hasMatch = group.some(kw => normalized.includes(kw.toLowerCase()));
+        if (hasMatch) matchedConcepts++;
+      });
+
+      // Proportional scoring based on matched key concepts
+      const ratio = matchedConcepts / keywordGroups.length;
+      let earned = Math.round(ratio * maxMarks);
+
+      // Give at least 1 mark if substantial effort (>= 25 chars) and at least 1 concept hit
+      if (earned === 0 && matchedConcepts > 0) earned = 1;
+      return { earned, matchedConcepts, totalConcepts: keywordGroups.length };
+    }
+
+    quizForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Double-check all questions are answered (defensive validation)
+      let firstUnanswered = null;
+      mcqData.forEach((_, idx) => {
+        if (!document.querySelector(`input[name="mcq-${idx}"]:checked`)) {
+          const card = document.getElementById(`card-mcq-${idx}`);
+          card.classList.add('unanswered-highlight');
+          if (!firstUnanswered) firstUnanswered = card;
+        }
+      });
+      saqData.forEach((_, idx) => {
+        if (!document.getElementById(`saq-${idx}`).value.trim()) {
+          const card = document.getElementById(`card-saq-${idx}`);
+          card.classList.add('unanswered-highlight');
+          if (!firstUnanswered) firstUnanswered = card;
+        }
+      });
+      laqData.forEach((_, idx) => {
+        if (!document.getElementById(`laq-${idx}`).value.trim()) {
+          const card = document.getElementById(`card-laq-${idx}`);
+          card.classList.add('unanswered-highlight');
+          if (!firstUnanswered) firstUnanswered = card;
+        }
+      });
+
+      if (firstUnanswered) {
+        firstUnanswered.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      isSubmitted = true;
+      let mcqScore = 0;
+      let saqScore = 0;
+      let laqScore = 0;
+
+      // 1. Grade MCQs
+      mcqData.forEach((item, idx) => {
+        const selectedVal = parseInt(document.querySelector(`input[name="mcq-${idx}"]:checked`).value, 10);
+        const fb = document.getElementById(`fb-mcq-${idx}`);
+
+        // Lock inputs
+        document.querySelectorAll(`input[name="mcq-${idx}"]`).forEach(inp => inp.disabled = true);
+
+        if (selectedVal === item.answer) {
+          mcqScore += 1;
+          fb.className = 'feedback correct';
+          fb.innerHTML = `<strong>✓ Correct (1/1 Mark):</strong> ${item.explanation}`;
+        } else {
+          fb.className = 'feedback incorrect';
+          fb.innerHTML = `<strong>✗ Incorrect (0/1 Mark):</strong> Correct answer: <em>"${item.options[item.answer]}"</em>. ${item.explanation}`;
+        }
+      });
+
+      // 2. Grade SAQs
+      saqData.forEach((item, idx) => {
+        const textarea = document.getElementById(`saq-${idx}`);
+        textarea.disabled = true;
+        const result = evaluateWrittenResponse(textarea.value, item.keywords, item.marks);
+        saqScore += result.earned;
+
+        const fb = document.getElementById(`fb-saq-${idx}`);
+        if (result.earned === item.marks) {
+          fb.className = 'feedback correct';
+        } else if (result.earned > 0) {
+          fb.className = 'feedback partial';
+        } else {
+          fb.className = 'feedback incorrect';
+        }
+
+        fb.innerHTML = `
+          <strong>Score: ${result.earned} / ${item.marks} Marks</strong> (Matched ${result.matchedConcepts}/${result.totalConcepts} key concepts)<br/>
+          <strong>Model Answer:</strong> ${item.sampleAnswer}
+        `;
+      });
+
+      // 3. Grade LAQs
+      laqData.forEach((item, idx) => {
+        const textarea = document.getElementById(`laq-${idx}`);
+        textarea.disabled = true;
+        const result = evaluateWrittenResponse(textarea.value, item.keywords, item.marks);
+        laqScore += result.earned;
+
+        const fb = document.getElementById(`fb-laq-${idx}`);
+        if (result.earned === item.marks) {
+          fb.className = 'feedback correct';
+        } else if (result.earned > 0) {
+          fb.className = 'feedback partial';
+        } else {
+          fb.className = 'feedback incorrect';
+        }
+
+        fb.innerHTML = `
+          <strong>Score: ${result.earned} / ${item.marks} Marks</strong> (Matched ${result.matchedConcepts}/${result.totalConcepts} key concepts)<br/>
+          <strong>Model Answer:</strong><br/>${item.sampleAnswer.replace(/\n/g, '<br/>')}
+        `;
+      });
+
+      // Update Scoreboard
+      const totalScore = mcqScore + saqScore + laqScore;
+      const percentage = Math.round((totalScore / 45) * 100);
+
+      document.getElementById('total-score-display').textContent = `${totalScore} / 45 (${percentage}%)`;
+      document.getElementById('mcq-score-display').textContent = `${mcqScore} / 20`;
+      document.getElementById('saq-score-display').textContent = `${saqScore} / 15`;
+      document.getElementById('laq-score-display').textContent = `${laqScore} / 10`;
+
+      let remark = '';
+      if (percentage >= 90) remark = 'Outstanding mastery of Temperature, Thermal Energy, and Heat!';
+      else if (percentage >= 75) remark = 'Great job! Review the highlighted model answers below to refine your explanations.';
+      else if (percentage >= 50) remark = 'Good effort. Study the feedback below on specific heat and thermal energy formulas.';
+      else remark = 'Keep practicing! Review the textbook concepts and model answers provided below.';
+
+      document.getElementById('grade-remark').textContent = remark;
+      document.getElementById('scoreboard').style.display = 'block';
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitted';
+      validationMsg.textContent = 'Quiz submitted! Scroll up to view your total score or review per-question feedback.';
+      document.getElementById('reset-btn').style.display = 'inline-block';
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Reset Handler
+    document.getElementById('reset-btn').addEventListener('click', () => {
+      location.reload();
+    });
+  </script>
+</body>
+</html>
+
